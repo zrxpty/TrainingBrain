@@ -10,9 +10,10 @@ Console.WriteLine($"Найдено задач: {tasks.Count}\n");
 foreach (var task in tasks)
 {
     Console.WriteLine($"=== {task.Name} ===");
-    task.Run();
+    
     await task.RunAsync();
-    Console.WriteLine();
+    
+    Console.WriteLine("====================");
 }
 
 Console.WriteLine("Все задачи выполнены!");
