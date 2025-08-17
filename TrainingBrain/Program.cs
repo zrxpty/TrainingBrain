@@ -11,6 +11,7 @@ foreach (var task in tasks)
 {
     Console.WriteLine($"=== {task.Name} ===");
     task.Run();
+    await task.RunAsync();
     Console.WriteLine();
 }
 
