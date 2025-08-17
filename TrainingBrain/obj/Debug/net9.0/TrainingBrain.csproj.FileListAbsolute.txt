@@ -1,0 +1,15 @@
+C:\projects\trash\TrainingBrain\TrainingBrain\bin\Debug\net9.0\TrainingBrain.exe
+C:\projects\trash\TrainingBrain\TrainingBrain\bin\Debug\net9.0\TrainingBrain.deps.json
+C:\projects\trash\TrainingBrain\TrainingBrain\bin\Debug\net9.0\TrainingBrain.runtimeconfig.json
+C:\projects\trash\TrainingBrain\TrainingBrain\bin\Debug\net9.0\TrainingBrain.dll
+C:\projects\trash\TrainingBrain\TrainingBrain\bin\Debug\net9.0\TrainingBrain.pdb
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\TrainingBrain.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\TrainingBrain.AssemblyInfoInputs.cache
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\TrainingBrain.AssemblyInfo.cs
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\TrainingBrain.csproj.CoreCompileInputs.cache
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\TrainingBrain.sourcelink.json
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\TrainingBrain.dll
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\refint\TrainingBrain.dll
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\TrainingBrain.pdb
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\TrainingBrain.genruntimeconfig.cache
+C:\projects\trash\TrainingBrain\TrainingBrain\obj\Debug\net9.0\ref\TrainingBrain.dll

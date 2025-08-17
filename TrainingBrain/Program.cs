@@ -3,6 +3,7 @@
 var tasks = typeof(ArticleBase).Assembly.GetTypes()
     .Where(t => typeof(ArticleBase).IsAssignableFrom(t) && !t.IsAbstract)
     .Select(t => (ArticleBase)Activator.CreateInstance(t)!)
+    .OrderBy(x => x.Name)
     .ToList();
 
 Console.WriteLine($"Найдено задач: {tasks.Count}\n");
