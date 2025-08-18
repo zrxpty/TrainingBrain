@@ -1,4 +1,7 @@
-﻿namespace TrainingBrain.Articles;
+﻿using System;
+using System.Threading.Tasks;
+
+namespace TrainingBrain.Articles;
 
 public class TestArticle : ArticleBase
 {
