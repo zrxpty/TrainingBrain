@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\projects\\trash\\TrainingBrain\\SignalrR.TypingIndicator\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.SignalrR.TypingIndicator.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.SignalrR.TypingIndicator.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.SignalrR.TypingIndicator.props",
+      "PackagePath": "build\\SignalrR.TypingIndicator.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.SignalrR.TypingIndicator.props",
+      "PackagePath": "buildMultiTargeting\\SignalrR.TypingIndicator.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.SignalrR.TypingIndicator.props",
+      "PackagePath": "buildTransitive\\SignalrR.TypingIndicator.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

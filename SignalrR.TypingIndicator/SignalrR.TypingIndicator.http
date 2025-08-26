@@ -1,0 +1,6 @@
+@SignalrR.TypingIndicator_HostAddress = http://localhost:5101
+
+GET {{SignalrR.TypingIndicator_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

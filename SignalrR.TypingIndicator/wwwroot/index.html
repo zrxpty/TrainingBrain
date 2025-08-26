@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Simple Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #messagesList {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            list-style-type: none;
+        }
+        #typingIndicator {
+            font-style: italic;
+            color: gray;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>Chat</h2>
+
+<input id="userInput" placeholder="Your name..." />
+<input id="messageInput" placeholder="Message..." />
+<button onclick="sendMessage()">Send</button>
+
+<ul id="messagesList"></ul>
+<div id="typingIndicator"></div>
+
+<script>
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("http://localhost:5000/chat") // если HTTPS, то https://localhost:5001/chat
+        .build();
+
+    // Список печатающих пользователей
+    const typingUsers = new Set();
+
+    // Получение сообщений
+    connection.on("ReceiveMessage", (user, message) => {
+        const li = document.createElement("li");
+        li.textContent = `${user}: ${message}`;
+        document.getElementById("messagesList").appendChild(li);
+    });
+
+    // Кто-то начал печатать
+    connection.on("UserTyping", (user) => {
+        typingUsers.add(user);
+        updateTypingIndicator();
+    });
+
+    // Кто-то перестал печатать
+    connection.on("UserStoppedTyping", (user) => {
+        typingUsers.delete(user);
+        updateTypingIndicator();
+    });
+
+    function updateTypingIndicator() {
+        const indicator = document.getElementById("typingIndicator");
+        if (typingUsers.size === 0) {
+            indicator.innerText = "";
+            return;
+        }
+        const users = Array.from(typingUsers).join(", ");
+        indicator.innerText = typingUsers.size === 1
+            ? `${users} печатает...`
+            : `${users} печатают...`;
+    }
+
+    // Подключение
+    async function start() {
+        try {
+            await connection.start();
+            console.log("Connected to chat");
+        } catch (err) {
+            console.error(err);
+            setTimeout(start, 2000);
+        }
+    }
+    start();
+
+    // Отправка сообщения
+    function sendMessage() {
+        const user = document.getElementById("userInput").value;
+        const message = document.getElementById("messageInput").value;
+        if (!user || !message) return;
+        connection.invoke("SendMessage", user, message);
+        document.getElementById("messageInput").value = "";
+        connection.invoke("StopTyping", user); // сразу убираем индикатор
+    }
+
+    // Логика печатания
+    const messageInput = document.getElementById("messageInput");
+    let typingTimeout;
+
+    messageInput.addEventListener("input", () => {
+        const user = document.getElementById("userInput").value;
+        if (user) {
+            connection.invoke("StartTyping", user);
+            clearTimeout(typingTimeout);
+            typingTimeout = setTimeout(() => {
+                connection.invoke("StopTyping", user);
+            }, 1500);
+        }
+    });
+</script>
+</body>
+</html>
